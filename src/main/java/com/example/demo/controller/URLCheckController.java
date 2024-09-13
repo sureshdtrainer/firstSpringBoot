@@ -22,6 +22,12 @@ public class URLCheckController {
 		String status="";
 		
 		try {
+			//SEt HTTP and HTTPS Proxy here or from command line
+			// HTTP/HTTPS Proxy
+        		//System.setProperty("http.proxyHost", "185.46.212.91");
+        		//System.setProperty("http.proxyPort", 9400);
+        		//System.setProperty("https.proxyHost", "185.46.212.91 ");
+        		//System.setProperty("https.proxyPort", 9400);
 			URL urlObj = new URL(url);
 			HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
 			connection.setRequestMethod("GET");
