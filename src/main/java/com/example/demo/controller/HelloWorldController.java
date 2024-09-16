@@ -7,16 +7,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.HelloWeb;
+import com.example.demo.service.GreetingService;
 
 @RestController
 public class HelloWorldController {
 	@Autowired
 	HelloWeb helloWeb;
 	
+	
+	@Autowired
+	GreetingService greetingService;
+	
 	//GEt HTTP method or rest service with URI /hello
 	@GetMapping("hello")
 	public String sayHello() {
-		return "Hello World!!!";
+		return greetingService.greet();
 	}
 	
 	@GetMapping("helloweb")
